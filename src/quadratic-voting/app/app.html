@@ -1,0 +1,41 @@
+<div class="inner">
+    <div class="instructions">
+        <h1>區塊鏈下一個「風口」在哪？</h1>
+        <h4>Where is the next "Critical Juncture" of the blockchain?</h4>
+        <br/>
+        <p>這是一份採用平方投票（Quadratic Voting, QV）的理論製作的簡易調查，不具名的分析台灣區塊鏈創業者認為下一階段的區塊鏈「風口」在哪？
+            <br/>您擁有 <b>{{votesPerPerson}}</b> 點數進行投票. 您可以對一個項目進行多次投票，但是這會增加您的投票成本！</p>
+        <br/>
+        <p>This is a simple survey made using the theory of Quadratic Voting (QV). An anonymous analysis of where the Taiwanese blockchain entrepreneurs believe that the next stage of the blockchain "Critical Juncture" is? You have <b>{{votesPerPerson}}</b> points to vote. You can vote for a item multiple times, but this will increase your voting costs!</p>
+        <ul>
+            <li ng-repeat="i in [1,2,3,4]">{{i}} vote : {{getVoteCost(i)}} tokens</li>
+        </ul>
+    </div>
+    <div class="votes-remaining">
+        <div class="label">You have {{getVotesRemaining()}} tokens left</div>
+        <div style="width: {{(votesPerPerson * 10)}}px !important" class="vote-meter">
+            <div style="width: {{(getVotesRemaining() * 10)}}px" class="inner"></div>
+        </div>
+    </div>
+    <div class="ballot">
+        <div ng-repeat="ballotItem in ballotItems" class="ballot-item">
+            <h4 class="question">{{ballotItem.question}}</h4>
+            <ul class="options">
+                <li ng-repeat="option in ballotItem.options" class="option">
+                    <div class="buttons">
+                        <button ng-click="addVote(option)" ng-disabled="!doShowAddVoteButton(option)">+</button>
+                        <button ng-click="removeVote(option)" ng-show="doShowRemoveVoteButton(option)">-</button>
+                    </div>
+                    <div class="label">{{option.name}}</div>
+                    <div class="vote-count">{{getVoteCount(option)}} votes</div>
+                    <div class="vote-meter">
+                        <div ng-repeat="vote in getVoteCount(option, true)" style="width: 20px" class="inner"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <button id="send_button" ng-click="send()">Submit</button>
+</div>

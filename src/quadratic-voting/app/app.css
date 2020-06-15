@@ -1,0 +1,102 @@
+qv-app {
+    display: block;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    margin: 20px;
+    padding: 40px;
+    background: white;
+    box-shadow: 1px 2px 14px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 500px) {
+    qv-app {
+        margin: 0;
+        padding: 20px;
+    }
+}
+
+qv-app>.inner>.instructions {
+    padding-bottom: 20px;
+}
+
+qv-app>.inner>.votes-remaining {
+    border-top: 1px solid grey;
+    padding: 10px 0;
+}
+
+qv-app>.inner>.votes-remaining>.vote-meter>.inner {
+    background: rgba(255, 215, 0, 0.5);
+}
+
+qv-app>.inner>.ballot>.ballot-item {
+    border-top: 1px solid grey;
+    padding: 20px 0 10px;
+}
+
+qv-app>.inner>.ballot>.ballot-item:last-child {
+    border-bottom: 1px solid grey;
+}
+
+qv-app>.inner>.ballot>.ballot-item>h4.question {
+    margin-top: 0;
+}
+
+qv-app>.inner>.ballot>.ballot-item>ul.options {
+    list-style: none;
+    padding: 0;
+}
+
+qv-app>.inner>.ballot>.ballot-item>ul.options>li.option {
+    padding: 4px 4px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+qv-app>.inner>.ballot>.ballot-item>ul.options>li.option:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+qv-app>.inner>.ballot>.ballot-item>ul.options>li.option>.buttons {
+    display: inline-block;
+    width: 60px;
+}
+
+qv-app>.inner>.ballot>.ballot-item>ul.options>li.option>.buttons>button {
+    font-size: 16px;
+    border: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+}
+
+qv-app>.inner>.ballot>.ballot-item>ul.options>li.option>.label {
+    display: inline-block;
+    width: 320px;
+}
+
+qv-app>.inner>.ballot>.ballot-item>ul.options>li.option>.vote-count {
+    display: inline-block;
+    width: 80px;
+    color: grey;
+}
+
+qv-app>.inner>.about {
+    margin-top: 40px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+qv-app .vote-meter {
+    display: inline-block;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.08);
+    font-size: 0;
+    margin-top: 4px;
+}
+
+qv-app .vote-meter>.inner {
+    display: inline-block;
+    background: rgba(0, 128, 0, 0.5);
+    min-width: 2px;
+    height: 10px;
+    margin-right: 1px;
+}
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,1 @@
+QuadraticVoting = angular.module('QuadraticVoting', [])
